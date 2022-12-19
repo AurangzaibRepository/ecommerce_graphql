@@ -39,4 +39,14 @@ class UpdateOrderMutation extends Mutation
             ],
         ];
     }
+
+    public function validationErrorMessages(array $args=[]): array
+    {
+        return [
+            'id.required' => 'Order Id is required',
+            'id.exists' => 'Order not found',
+            'product_count.required' => 'Product count is required',
+            'total_price.required' => 'Total price is required',
+        ];
+    }
 }
