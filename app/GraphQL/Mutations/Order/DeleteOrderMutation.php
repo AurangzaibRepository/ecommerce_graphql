@@ -37,4 +37,12 @@ class DeleteOrderMutation extends Mutation
             'id.exists' => 'Order not found',
         ];
     }
+
+    public function resolve($root, array $args): string
+    {
+        Order::find($args['id'])
+              ->delete();
+
+        return 'Order deleted successfully';
+    }
 }
