@@ -29,4 +29,12 @@ class DeleteOrderMutation extends Mutation
             ],
         ];
     }
+
+    public function validationErrorMessages(array $args=[]): array
+    {
+        return [
+            'id.required' => 'Order Id is required',
+            'id.exists' => 'Order not found',
+        ];
+    }
 }
