@@ -49,4 +49,18 @@ class CreateOrderMutation extends Mutation
             'user_id.exists' => 'User not found',
         ];
     }
+
+    public function resolve($root, array $args): Order
+    {
+        $args['order_number'] = $this->generateOrderNumber();
+        $order = Order::create($args);
+
+        return $order;
+    }
+
+    private function generateOrderNumber(): string
+    {
+        $orderCount = Order::count();
+        return "Order_{$orderCount}";
+    }
 }
