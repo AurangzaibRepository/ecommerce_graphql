@@ -49,4 +49,12 @@ class UpdateOrderMutation extends Mutation
             'total_price.required' => 'Total price is required',
         ];
     }
+
+    public function resolve($root, array $args): Order
+    {
+        Order::where('id', $args['id'])
+              ->update($args);
+
+        return Order::find($args['id']);
+    }
 }
