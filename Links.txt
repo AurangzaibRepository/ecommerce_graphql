@@ -1,0 +1,3 @@
+https://www.freecodecamp.org/news/build-a-graphql-api-using-laravel/
+https://github.com/rebing/graphql-laravel#concepts
+https://morioh.com/p/b5eaae587281
