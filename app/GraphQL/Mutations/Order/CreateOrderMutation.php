@@ -39,4 +39,14 @@ class CreateOrderMutation extends Mutation
             ],
         ];
     }
+
+    public function validationErrorMessages(array $args=[]): array
+    {
+        return [
+            'product_count.required' => 'Product count is required',
+            'total_price.required' => 'Total price is required',
+            'user_id.required' => 'User Id is required',
+            'user_id.exists' => 'User not found',
+        ];
+    }
 }
