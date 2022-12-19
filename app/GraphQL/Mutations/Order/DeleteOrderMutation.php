@@ -18,4 +18,15 @@ class DeleteOrderMutation extends Mutation
     {
         return Type::string();
     }
+
+    public function args(): array
+    {
+        return [
+            'id' => [
+                'name' => 'id',
+                'type' => Type::int(),
+                'rules' => 'required|exists:orders',
+            ],
+        ];
+    }
 }
