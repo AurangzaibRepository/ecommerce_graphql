@@ -112,6 +112,7 @@ return [
                 'createTag' => App\GraphQL\Mutations\Tag\CreateTagMutation::class,
                 'updateTag' => App\GraphQL\Mutations\Tag\UpdateTagMutation::class,
                 'deleteTag' => App\GraphQL\Mutations\Tag\DeleteTagMutation::class,
+                'createOrder' => App\GraphQL\Mutations\Order\CreateOrderMutation::class,
             ],
             // The types only available in this schema
             'types' => [

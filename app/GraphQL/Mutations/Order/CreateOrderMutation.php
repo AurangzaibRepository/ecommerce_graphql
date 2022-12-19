@@ -60,7 +60,7 @@ class CreateOrderMutation extends Mutation
 
     private function generateOrderNumber(): string
     {
-        $orderCount = Order::count();
+        $orderCount = Order::count() + 1;
         return "Order_{$orderCount}";
     }
 }
