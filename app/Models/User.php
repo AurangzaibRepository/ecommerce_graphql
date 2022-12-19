@@ -34,6 +34,10 @@ class User extends Model
             $user->posts()->each(function($post){
                 $post->delete();
             });
+
+            $user->orders()->each(function($order){
+                $order->delete();
+            });
         });
     }
 }
