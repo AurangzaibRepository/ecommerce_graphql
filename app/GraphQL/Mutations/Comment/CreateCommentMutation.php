@@ -52,6 +52,8 @@ class CreateCommentMutation extends Mutation
             'text.required' => 'Text is required',
             'post_id.required' => 'Post Id is required',
             'post_id.exists' => 'Post not found',
+            'user_id.required' => 'User Id is required',
+            'user_id.exists' => 'User not found',
         ];
     }
 }
