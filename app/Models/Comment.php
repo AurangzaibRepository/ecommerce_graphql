@@ -13,6 +13,7 @@ class Comment extends Model
     public $fillable = [
         'text',
         'post_id',
+        'user_id',
     ];
 
     public function post(): Relation
