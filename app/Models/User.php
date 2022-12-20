@@ -43,6 +43,8 @@ class User extends Model
             $user->orders()->each(function($order){
                 $order->delete();
             });
+
+            $user->comments()->delete();
         });
     }
 }
