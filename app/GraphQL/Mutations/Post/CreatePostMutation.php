@@ -42,6 +42,10 @@ class CreatePostMutation extends Mutation
                 'type' => Type::int(),
                 'rules' => 'required|exists:categories,id',
             ],
+            'tag_ids' => [
+                'name' => 'tag_ids',
+                'type' => Type::listOf(Type::int()),
+            ],
         ];
     }
 
