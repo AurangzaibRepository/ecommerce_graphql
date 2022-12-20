@@ -14,4 +14,9 @@ class Tag extends Model
         'name',
         'description',
     ];
+
+    public function posts(): Relation
+    {
+        return $this->belongsToMany(Post::class, 'post_tag');
+    }
 }
