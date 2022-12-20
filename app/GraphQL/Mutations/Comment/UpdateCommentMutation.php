@@ -39,7 +39,7 @@ class UpdateCommentMutation extends Mutation
             ],
             'user_id' => [
                 'name' => 'user_id',
-                'type' => GraphQL::type('User'),
+                'type' => Type::int(),
                 'rules' => 'required|exists:users,id',
             ],
         ];
