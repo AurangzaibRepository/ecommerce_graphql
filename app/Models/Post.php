@@ -35,7 +35,7 @@ class Post extends Model
 
     public function tags(): Relation
     {
-        return $this->belongsToMany(Tag::class, 'post_tag');
+        return $this->belongsToMany(Tag::class, 'post_tags');
     }
 
     public static function boot(): void
