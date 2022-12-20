@@ -12,10 +12,16 @@ use App\Models\PostTag;
  */
 class PostTagFactory extends Factory
 {
+    protected $model = PostTag::class;
+
     public function definition()
     {
+        $postIdList = Post::all()->pluck('id');
+        $tagIdList = Tag::all()->pluck('id');
+
         return [
-            //
+            'post_id' => $this->faker->randomElement($postIdList),
+            'tag_id' => $this->faker->randomElement($tagIdList),
         ];
     }
 }
