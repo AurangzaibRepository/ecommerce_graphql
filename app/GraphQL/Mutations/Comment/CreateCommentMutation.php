@@ -32,6 +32,11 @@ class CreateCommentMutation extends Mutation
                 'type' => Type::int(),
                 'rules' => 'required|exists:posts,id',
             ],
+            'user_id' => [
+                'name' => 'user_id',
+                'type' => Type::int(),
+                'rules' => 'required|exists:users,id',
+            ],
         ];
     }
 
