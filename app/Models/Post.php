@@ -45,6 +45,8 @@ class Post extends Model
             $post->comments()->each(function($comment){
                 $comment->delete();
             });
+
+            $post->tags()->detach();
         });
 
     }
