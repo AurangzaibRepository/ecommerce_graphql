@@ -27,6 +27,11 @@ class User extends Model
         return $this->hasMany(Order::class);
     }
 
+    public function comments(): Relation
+    {
+        return $this->hasMany(Comment::class);
+    }
+
     public static function boot(): void
     {
         parent::boot();
