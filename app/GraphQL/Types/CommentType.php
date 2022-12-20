@@ -30,6 +30,10 @@ class CommentType extends GraphQLType
                 'type' => GraphQL::type('Post'),
                 'description' => 'Post against comment',
             ],
+            'user' => [
+                'type' => GraphQL::type('User'),
+                'description' => 'User who posted comment',
+            ],
         ];
     }
 }
