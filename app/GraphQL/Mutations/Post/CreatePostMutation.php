@@ -6,6 +6,7 @@ use App\Models\Post;
 use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Mutation;
 use Rebing\GraphQL\Support\Facades\GraphQL;
+use Illuminate\Support\Arr;
 
 class CreatePostMutation extends Mutation 
 {
@@ -52,6 +53,11 @@ class CreatePostMutation extends Mutation
     public function resolve($root, array $args): Post
     {
         $post = Post::create($args);
+
+        if (Arr::exists($args, 'tag_ids')) {
+            $post->tags()->sync($args['tag_ids']);
+        }
+        
         return $post;
     }
 
