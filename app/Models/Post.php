@@ -33,6 +33,11 @@ class Post extends Model
         return $this->hasMany(Comment::class);
     }
 
+    public function tags(): Relation
+    {
+        return $this->belongsToMany(Tag::class, 'post_tag');
+    }
+
     public static function boot(): void
     {
         parent::boot();
