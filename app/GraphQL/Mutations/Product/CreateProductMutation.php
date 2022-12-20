@@ -50,6 +50,7 @@ class CreateProductMutation extends Mutation
         return [
             'name.required' => 'Name is required',
             'description.required' => 'Description is required',
+            'price.required' => 'Price is required',
             'product_category_id.required' => 'Product category Id is required',
             'product_category_id.exists' => 'Product category not found',
         ];
