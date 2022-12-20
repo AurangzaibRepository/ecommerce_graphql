@@ -30,6 +30,10 @@ class TagType extends GraphQLType
                 'type' => Type::string(),
                 'description' => 'Tag description',
             ],
+            'posts' => [
+                'type' => Type::listOf(GraphQL::type('Post')),
+                'description' => 'Tag posts',
+            ],
         ];
     }
 }
