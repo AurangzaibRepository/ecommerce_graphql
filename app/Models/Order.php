@@ -21,4 +21,9 @@ class Order extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function products(): Relation
+    {
+        return $this->belongsToMany(Product::class);
+    }
 }
