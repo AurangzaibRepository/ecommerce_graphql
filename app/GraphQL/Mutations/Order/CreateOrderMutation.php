@@ -32,7 +32,11 @@ class CreateOrderMutation extends Mutation
                 'type' => Type::int(),
                 'rules' => 'required|exists:users,id',
             ],
-            
+            'product_ids' => [
+                'name' => 'product_ids',
+                'type' => Type::listOf(Type::int()),
+            ],
+
         ];
     }
 
