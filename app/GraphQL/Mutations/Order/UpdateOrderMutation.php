@@ -46,6 +46,7 @@ class UpdateOrderMutation extends Mutation
             'id.required' => 'Order Id is required',
             'id.exists' => 'Order not found',
             'total_price.required' => 'Total price is required',
+            'product_ids.required' => 'Product Ids are required',
         ];
     }
 
