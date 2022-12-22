@@ -37,6 +37,11 @@ class UpdateProductMutation extends Mutation
                 'type' => Type::string(),
                 'rules' => 'required',
             ],
+            'price' => [
+                'name' => 'price',
+                'type' => Type::float(),
+                'rules' => 'required',
+            ],
             'product_category_id' => [
                 'name' => 'product_category_id',
                 'type' => Type::int(),
