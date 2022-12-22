@@ -54,8 +54,10 @@ class CreateOrderMutation extends Mutation
     public function resolve($root, array $args): Order
     {
         $args['order_number'] = $this->generateOrderNumber();
+        $args['product_count'] = count($args['product_ids']);
         $order = Order::create($args);
-
+        $order->products()->attach($args['product_ids']);
+        
         return $order;
     }
 
