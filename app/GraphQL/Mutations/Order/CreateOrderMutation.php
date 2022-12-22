@@ -35,6 +35,7 @@ class CreateOrderMutation extends Mutation
             'product_ids' => [
                 'name' => 'product_ids',
                 'type' => Type::listOf(Type::int()),
+                'rules' => 'required',
             ],
 
         ];
@@ -46,6 +47,7 @@ class CreateOrderMutation extends Mutation
             'total_price.required' => 'Total price is required',
             'user_id.required' => 'User Id is required',
             'user_id.exists' => 'User not found',
+            'product_ids.required' => 'Product Ids are required',
         ];
     }
 
