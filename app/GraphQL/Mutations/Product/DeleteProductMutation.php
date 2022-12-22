@@ -39,6 +39,7 @@ class DeleteProductMutation extends Mutation
         return [
             'id.required' => 'Id is required',
             'id.exists' => 'Product not found',
+            'id.unique' => 'Product is associated with order',
         ];
     }
 
