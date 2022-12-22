@@ -22,11 +22,6 @@ class CreateOrderMutation extends Mutation
     public function args(): array
     {
         return [
-            'product_count' => [
-                'name' => 'product_count',
-                'type' => Type::int(),
-                'rules' => 'required',
-            ],
             'total_price' => [
                 'name' => 'total_price',
                 'type' => Type::float(),
@@ -37,13 +32,13 @@ class CreateOrderMutation extends Mutation
                 'type' => Type::int(),
                 'rules' => 'required|exists:users,id',
             ],
+            
         ];
     }
 
     public function validationErrorMessages(array $args=[]): array
     {
         return [
-            'product_count.required' => 'Product count is required',
             'total_price.required' => 'Total price is required',
             'user_id.required' => 'User Id is required',
             'user_id.exists' => 'User not found',
