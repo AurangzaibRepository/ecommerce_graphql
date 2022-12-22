@@ -42,6 +42,10 @@ class OrderType extends GraphQLType
                 'type' => GraphQL::type('User'),
                 'description' => 'user who placed an order',
             ],
+            'products' => [
+                'type' => Type::listOf(GraphQL::type('Product')),
+                'description' => 'Order products',
+            ],
         ];
     }
 
