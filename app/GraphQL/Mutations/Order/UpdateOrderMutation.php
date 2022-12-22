@@ -27,11 +27,6 @@ class UpdateOrderMutation extends Mutation
                 'type' => Type::int(),
                 'rules' => 'required|exists:orders',
             ],
-            'product_count' => [
-                'name' => 'product_count',
-                'type' => Type::int(),
-                'rules' => 'required',
-            ],
             'total_price' => [
                 'name' => 'total_price',
                 'type' => Type::float(),
@@ -45,7 +40,6 @@ class UpdateOrderMutation extends Mutation
         return [
             'id.required' => 'Order Id is required',
             'id.exists' => 'Order not found',
-            'product_count.required' => 'Product count is required',
             'total_price.required' => 'Total price is required',
         ];
     }
