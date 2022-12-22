@@ -32,6 +32,11 @@ class UpdateOrderMutation extends Mutation
                 'type' => Type::float(),
                 'rules' => 'required',
             ],
+            'product_ids' => [
+                'name' => 'product_ids',
+                'type' => Type::listOf(Type::int()),
+                'rules' => 'required',
+            ],
         ];
     }
 
