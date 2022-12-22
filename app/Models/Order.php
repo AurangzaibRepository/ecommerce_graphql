@@ -26,4 +26,12 @@ class Order extends Model
     {
         return $this->belongsToMany(Product::class, 'order_products');
     }
+
+    public static function boot(): void
+    {
+        parent::boot();
+        self::deleting(function($order){
+            $order->products()->detach();
+        });
+    }
 }
