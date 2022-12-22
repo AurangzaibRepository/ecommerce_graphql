@@ -52,9 +52,16 @@ class UpdateOrderMutation extends Mutation
 
     public function resolve($root, array $args): Order
     {
+        $args['product_count'] = count($args['product_ids']);
+        $productList = $args['product_ids'];
+        unset($args['product_ids']);
+
         Order::where('id', $args['id'])
               ->update($args);
+        
+        $order = Order::find($args['id']);
+        $order->products()->sync($productList);
 
-        return Order::find($args['id']);
+        return $order;
     }
 }
