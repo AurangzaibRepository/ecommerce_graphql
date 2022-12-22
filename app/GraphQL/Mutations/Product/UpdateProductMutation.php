@@ -57,6 +57,7 @@ class UpdateProductMutation extends Mutation
             'id.exists' => 'Product not found',
             'name.required' => 'Name is required',
             'description.required' => 'Description is required',
+            'price.required' => 'Price is required',
             'product_category_id.required' => 'Product category id is required',
             'product_category_id.exists' => 'Product category not found',
         ];
