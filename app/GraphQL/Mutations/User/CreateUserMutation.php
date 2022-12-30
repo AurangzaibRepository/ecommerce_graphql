@@ -42,6 +42,11 @@ class CreateUserMutation extends Mutation
                 'type' => GraphQL::type('Upload'),
                 //'rules' => ['required', 'image'],
             ],
+            'password' => [
+                'name' => 'password',
+                'type' => Type::string(),
+                'rules' => 'required',
+            ],
         ];
     }
 
