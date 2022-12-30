@@ -63,6 +63,7 @@ class CreateUserMutation extends Mutation
             'phone_number.required' => 'Phone number is required',
             'email.required' => 'Email is required',
             'email.email' => 'Invalid email',
+            'password.required' => 'Password is required',
         ];
     }
 }
