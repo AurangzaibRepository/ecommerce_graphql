@@ -16,6 +16,7 @@ class User extends Model
         'email',
         'profile_picture',
         'password',
+        'role',
     ];
 
     public function posts(): Relation
