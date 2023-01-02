@@ -51,7 +51,8 @@ class UsersQuery extends Query
 
         $query = $this->applyFilters($args);
         $limit = config('app.page_size');
-        $offset = ($limit * $args['page_no']) - $limit;
+        $pageNo = (Arr::exists($args, 'page_no') ? $args['page_no'] : 1);
+        $offset = ($limit * $pageNo) - $limit;
         
         return $query->limit($limit)
                      ->offset($offset)
