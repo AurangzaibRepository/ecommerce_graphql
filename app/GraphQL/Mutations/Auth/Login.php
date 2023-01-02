@@ -33,4 +33,13 @@ class Login extends Mutation
             ],
         ];
     }
+
+    public function validationErrorMessages(array $args=[]): array
+    {
+        return [
+            'email.required' => 'Email is required',
+            'email.email' => 'Invalid email',
+            'password.required' => 'Password is required',
+        ];
+    }
 }
