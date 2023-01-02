@@ -2,7 +2,7 @@
 
 namespace App\GraphQL\Mutations\Auth;
 
-use GraphQL\Type\Definiton\Type;
+use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Facades\GraphQL;
 use Rebing\GraphQL\Support\Mutation;
 
