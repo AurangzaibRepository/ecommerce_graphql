@@ -24,7 +24,7 @@ class Login extends Mutation
             'email' => [
                 'name' => 'email',
                 'type' => Type::string(),
-                'rules' => 'required|email',
+                'rules' => 'required|email|exists:users',
             ],
             'password' => [
                 'name' => 'password',
