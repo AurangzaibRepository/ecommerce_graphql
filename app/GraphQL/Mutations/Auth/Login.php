@@ -15,7 +15,7 @@ class Login extends Mutation
 
     public function type(): Type
     {
-        return Type::array();
+        return Type::listOf(Type::String());
     }
 
     public function args(): array
@@ -46,8 +46,5 @@ class Login extends Mutation
 
     public function resolve($root, array $arg): array
     {
-        return [
-            'ok here',
-        ];
     }
 }
