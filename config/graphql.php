@@ -128,7 +128,7 @@ return [
                 'Tag' => App\GraphQL\Types\TagType::class,
                 'Order' => App\GraphQL\Types\OrderType::class,
                 \Rebing\GraphQL\Support\UploadType::class,
-                App\GraphQL\Enums\RoleEnum::class,
+                'RoleEnum' => App\GraphQL\Enums\RoleEnum::class,
             ],
 
             // Laravel HTTP middleware
