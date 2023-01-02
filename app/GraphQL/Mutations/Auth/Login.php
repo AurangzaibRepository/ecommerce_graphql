@@ -17,4 +17,20 @@ class Login extends Mutation
     {
         return Type::array();
     }
+
+    public function args(): array
+    {
+        return [
+            'email' => [
+                'name' => 'email',
+                'type' => Type::string(),
+                'rules' => 'required|email',
+            ],
+            'password' => [
+                'name' => 'password',
+                'type' => Type::string(),
+                'rules' => 'required',
+            ],
+        ];
+    }
 }
