@@ -43,4 +43,11 @@ class Login extends Mutation
             'password.required' => 'Password is required',
         ];
     }
+
+    public function resolve($root, array $arg): array
+    {
+        return [
+            'ok here',
+        ];
+    }
 }
