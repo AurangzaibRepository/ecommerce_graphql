@@ -12,4 +12,9 @@ class Login extends Mutation
         'name' => 'Login',
         'description' => 'Login user',
     ];
+
+    public function type(): Type
+    {
+        return Type::array();
+    }
 }
