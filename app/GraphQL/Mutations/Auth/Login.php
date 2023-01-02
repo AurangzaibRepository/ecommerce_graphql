@@ -39,6 +39,7 @@ class Login extends Mutation
         return [
             'email.required' => 'Email is required',
             'email.email' => 'Invalid email',
+            'email.exists' => 'Email does not exist',
             'password.required' => 'Password is required',
         ];
     }
