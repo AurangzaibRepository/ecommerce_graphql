@@ -39,6 +39,10 @@ class UserType extends GraphQLType
                 'type' => Type::string(),
                 'description' => 'user profile picture',
             ],
+            'role' => [
+                'type' => GraphQL::type('RoleEnum'),
+                'description' => 'User role',
+            ],
             'posts' => [
                 'type' => Type::listOf(GraphQL::type('Post')),
                 'description' => 'List of user posts',
