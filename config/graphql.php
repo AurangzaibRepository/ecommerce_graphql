@@ -115,6 +115,7 @@ return [
                 'createOrder' => App\GraphQL\Mutations\Order\CreateOrderMutation::class,
                 'updateOrder' => App\GraphQL\Mutations\Order\UpdateOrderMutation::class,
                 'deleteOrder' => App\GraphQL\Mutations\Order\DeleteOrderMutation::class,
+                'login' => App\GraphQL\Mutations\Auth\Login::class,
             ],
             // The types only available in this schema
             'types' => [
