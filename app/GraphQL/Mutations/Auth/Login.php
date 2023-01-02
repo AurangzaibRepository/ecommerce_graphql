@@ -6,6 +6,7 @@ use App\Models\User;
 use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Facades\GraphQL;
 use Rebing\GraphQL\Support\Mutation;
+use Illuminate\Support\Facades\Hash;
 
 class Login extends Mutation
 {
@@ -45,7 +46,18 @@ class Login extends Mutation
         ];
     }
 
-    public function resolve($root, array $arg): array
+    public function resolve($root, array $args): array
     {
+        $user = User::where('email', $args['email'])->first();
+
+        if (!Hash::check($args['password'], $user->password)){
+            return [
+                'error' => 'Invalid credentials',
+            ];
+        }
+
+        return [
+            'Verified',
+        ];
     }
 }
