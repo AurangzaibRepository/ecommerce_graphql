@@ -8,5 +8,11 @@ return new class extends Migration
 {
     public function up(): void
     {
+        Schema::table('users', function($table) {
+            $table->string('api_token', 80)->after('role')
+                ->unique()
+                ->nullable()
+                ->default(null);
+        });
     }
 };
