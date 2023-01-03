@@ -130,6 +130,7 @@ return [
                 'Order' => App\GraphQL\Types\OrderType::class,
                 \Rebing\GraphQL\Support\UploadType::class,
                 App\GraphQL\Enums\RoleEnum::class,
+                App\GraphQL\Types\LoginResponseType::class,
             ],
 
             // Laravel HTTP middleware
