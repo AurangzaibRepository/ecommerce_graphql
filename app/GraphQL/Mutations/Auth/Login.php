@@ -8,6 +8,7 @@ use Rebing\GraphQL\Support\Facades\GraphQL;
 use Rebing\GraphQL\Support\Mutation;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Str;
 
 class Login extends Mutation
 {
@@ -57,7 +58,13 @@ class Login extends Mutation
            ]);
         }
 
+        $token = Str::random(60);
+        $user->forceFill([
+            'api_token' => hash('sha256', $token),
+        ])->save();
+
         return [
+            'token' => $token,
             'user_id' => $user->id,
             'user_name' => $user->name,
         ];
