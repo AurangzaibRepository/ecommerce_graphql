@@ -57,16 +57,22 @@ class Login extends Mutation
             'error' => 'Invalid credentials',
            ]);
         }
+        
+        return [
+            'token' => $this->generateToken($user),
+            'user_id' => $user->id,
+            'user_name' => $user->name,
+        ];
+    }
 
+    private function generateToken(User $user): string
+    {
         $token = Str::random(60);
+
         $user->forceFill([
             'api_token' => hash('sha256', $token),
         ])->save();
 
-        return [
-            'token' => $token,
-            'user_id' => $user->id,
-            'user_name' => $user->name,
-        ];
+        return $token;
     }
 }
