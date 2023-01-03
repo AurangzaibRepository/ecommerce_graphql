@@ -17,7 +17,7 @@ class Login extends Mutation
 
     public function type(): Type
     {
-        return Type::listOf(Type::String());
+        return GraphQL::type('LoginResponseType');
     }
 
     public function args(): array
@@ -55,9 +55,5 @@ class Login extends Mutation
                 'error' => 'Invalid credentials',
             ];
         }
-
-        return [
-            'Verified',
-        ];
     }
 }
