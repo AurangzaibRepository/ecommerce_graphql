@@ -24,7 +24,7 @@ class LoginResponseType extends GraphQLType
                 'type' => Type::int(),
                 'description' => 'User Id',
             ],
-            'name' => [
+            'user_name' => [
                 'type' => Type::string(),
                 'description' => 'user name',
             ],
