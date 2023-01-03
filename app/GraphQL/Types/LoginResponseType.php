@@ -8,4 +8,8 @@ use Rebing\GraphQL\Support\Type as GraphQLType;
 
 class LoginResponseType extends GraphQLType 
 {
+    protected $attributes = [
+        'name' => 'LoginResponseType',
+        'description' => 'Login response type',
+    ];
 }
