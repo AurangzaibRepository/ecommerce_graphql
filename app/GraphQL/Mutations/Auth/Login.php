@@ -56,5 +56,10 @@ class Login extends Mutation
             'error' => 'Invalid credentials',
            ]);
         }
+
+        return [
+            'user_id' => $user->id,
+            'user_name' => $user->name,
+        ];
     }
 }
