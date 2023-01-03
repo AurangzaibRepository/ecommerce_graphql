@@ -12,4 +12,22 @@ class LoginResponseType extends GraphQLType
         'name' => 'LoginResponseType',
         'description' => 'Login response type',
     ];
+
+    public function fields(): array
+    {
+        return [
+            'token' => [
+                'type' => Type::string(),
+                'description' => 'Access token for user',
+            ],
+            'user_id' => [
+                'type' => Type::int(),
+                'description' => 'User Id',
+            ],
+            'name' => [
+                'type' => Type::string(),
+                'description' => 'user name',
+            ],
+        ];
+    }
 }
