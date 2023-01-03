@@ -7,6 +7,7 @@ use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Facades\GraphQL;
 use Rebing\GraphQL\Support\Mutation;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\ValidationException;
 
 class Login extends Mutation
 {
@@ -51,9 +52,9 @@ class Login extends Mutation
         $user = User::where('email', $args['email'])->first();
 
         if (!Hash::check($args['password'], $user->password)){
-            return [
-                'error' => 'Invalid credentials',
-            ];
+           throw ValidationException::withMessages([
+            'error' => 'Invalid credentials',
+           ]);
         }
     }
 }
